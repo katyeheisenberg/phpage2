@@ -1,9 +1,7 @@
-/* eslint-disable react/jsx-no-target-blank */
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import Head from "next/head";
-import {
-  AiFillTwitterCircle,
-  AiFillInstagram,
-} from "react-icons/ai";
+import { AiFillTwitterCircle, AiFillInstagram } from "react-icons/ai";
 import Me from "../public/meem.png";
 import Image from "next/image";
 import img1 from "../public/6.jpg";
@@ -20,6 +18,26 @@ import Mar4 from "../public/Marina4.jpg";
 import logo3 from "../public/logo3.svg";
 
 export default function Home() {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_dtd14qi",
+        "template_7pm2clb",
+        form.current,
+        "3VhYRlLWAnPxaud44"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <div>
       <Head>
@@ -36,26 +54,28 @@ export default function Home() {
             <p className="text-sm py-4 text-gray-800 max-w-sm mx-auto md:text-xl font-thin">
               Portraits. Street photography. Nature photography.
             </p>
-            <div className="text-5xl flex justify-center gap-16 py-10 text-gray-600">
+            <div className="text-5xl flex justify-center gap-16 py-5 text-gray-600">
               <a
                 href="https://www.instagram.com/katyathegreatest/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <AiFillInstagram />
               </a>
               <a
                 href="https://twitter.com/Katheridze?t=GY6FZSadUY2dkij54Jsrwg&s=09"
                 target="_blank"
+                rel="noreferrer"
               >
                 <AiFillTwitterCircle />
               </a>
             </div>
-            <div className="mx-auto rounded-full w-60 h-60 relative overflow-hidden mt-10 md:h-70 md:w-70">
+            <div className="mx-auto rounded-full w-60 h-60 relative overflow-hidden mt-5 md:h-70 md:w-70">
               <Image src={Me} layout="fill" objectFit="cover" />
             </div>
           </div>
         </section>
-        <section className="py-1">
+        <section className="py-10">
           <div>
             <h3 className="text-3xl text-center font-semibold">Portofolio</h3>
             <p className="text-xl py-2 leading-8 text-center text-gray-800 font-thin">
@@ -173,25 +193,35 @@ export default function Home() {
                     Contact Me
                   </h1>
                 </div>
-                <form className="flex flex-col gap-y-4">
+                <form
+                  ref={form}
+                  onSubmit={sendEmail}
+                  className="flex flex-col gap-y-4"
+                >
                   <div className="flex gap-x-10">
                     <input
-                      className="outline-none border-b border-b-primary h-[60px] bg-transparent w-full pl-3 placeholder:text-[#757879]"
                       type="text"
+                      name="user_name"
+                      className="outline-none border-b border-b-primary h-[60px] bg-transparent w-full pl-3 placeholder:text-[#757879]"
                       placeholder="Your name"
                     />
                     <input
-                      className="outline-none border-b border-b-primary h-[60px] bg-transparent w-full pl-3 placeholder:text-[#757879]"
                       type="text"
+                      name="user_email"
+                      className="outline-none border-b border-b-primary h-[60px] bg-transparent w-full pl-3 placeholder:text-[#757879]"
                       placeholder="Your email address"
                     />
                   </div>
                   <input
-                    className="outline-none border-b border-b-primary h-[60px] bg-transparent w-full pl-3 placeholder:text-[#757879]"
-                    type="text"
+                    name="message"
                     placeholder="Your message"
+                    className="outline-none border-b border-b-primary h-[60px] bg-transparent w-full pl-3 placeholder:text-[#757879]"
                   />
-                  <button className="flex mx-auto text-white bg-cyan-700 border-0 py-3 my-7 px-8 focus:outline-none hover:bg-blue-400 rounded text-lg">
+                  <button
+                    className="flex mx-auto text-white bg-cyan-700 border-0 py-3 my-7 px-8 focus:outline-none hover:bg-blue-400 rounded text-lg"
+                    type="submit"
+                    value="Send"
+                  >
                     Send
                   </button>
                 </form>
