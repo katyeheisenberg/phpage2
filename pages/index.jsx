@@ -44,7 +44,7 @@ export default function Home() {
         <title>Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className=" bg-white px-10 md:px-20 lg:px-40">
+      <main className="px-10 md:px-20 lg:px-40">
         <section className="min-h-screen">
           <div className="text-center p-5 py-10">
             <Image src={logo3} alt="" />
@@ -54,7 +54,7 @@ export default function Home() {
             <p className="text-sm py-4 text-gray-800 max-w-sm mx-auto md:text-xl font-thin">
               Portraits. Street photography. Nature photography.
             </p>
-            <div className="text-5xl flex justify-center gap-16 py-5 text-gray-600">
+            <div className="text-5xl flex justify-center gap-16 py-10 text-gray-600">
               <a
                 href="https://www.instagram.com/katyathegreatest/"
                 target="_blank"
@@ -70,7 +70,7 @@ export default function Home() {
                 <AiFillTwitterCircle />
               </a>
             </div>
-            <div className="mx-auto rounded-full w-60 h-60 relative overflow-hidden mt-5 md:h-70 md:w-70">
+            <div className="mx-auto rounded-2xl hover:drop-shadow-[0_35px_35px_rgba(15,209,99,0.19)] hover:transition-shadow hover:duration-500 w-60 h-60 my-1 relative overflow-hidden md:h-70 md:w-70">
               <Image src={Me} layout="fill" objectFit="cover" />
             </div>
           </div>
@@ -83,7 +83,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-            <div className="basis-1/3 flex-1 ">
+            <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
                 width={"80%"}
