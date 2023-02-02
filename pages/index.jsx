@@ -209,7 +209,7 @@ export default function Home() {
                       type="text"
                       name="user_email"
                       className="outline-none border-b border-b-primary h-[60px] bg-transparent w-full pl-3 placeholder:text-[#757879]"
-                      placeholder="Your email address"
+                      placeholder="Your E-mail"
                     />
                   </div>
                   <input
