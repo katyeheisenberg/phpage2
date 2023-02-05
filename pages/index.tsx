@@ -17,27 +17,7 @@ import Mar3 from "../public/Marina3.jpg";
 import Mar4 from "../public/Marina4.jpg";
 import logo3 from "../public/logo3.svg";
 
-export default function Home():JSX.Element {
-  const form = useRef<HTMLFormElement>();
-  const sendEmail = (e:React.SyntheticEvent<EventTarget>): void => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_dtd14qi",
-        "template_7pm2clb",
-        form.current,
-        "3VhYRlLWAnPxaud44"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
+const Home:React.FunctionComponent = ()=> {
   return (
     <div>
       <Head>
@@ -184,52 +164,9 @@ export default function Home():JSX.Element {
             </div>
           </div>
         </section>
-        <section>
-          <div>
-            <section className="text-gray-700">
-              <div className="px-5 py-24 mx-auto">
-                <div className="flex flex-col text-center w-full mb-7">
-                  <h1 className="sm:text-3xl font-thin mb-4 text-gray-900">
-                    Contact Me
-                  </h1>
-                </div>
-                <form
-                  ref={form}
-                  onSubmit={sendEmail}
-                  className="flex flex-col gap-y-4"
-                >
-                  <div className="flex gap-x-10">
-                    <input
-                      type="text"
-                      name="user_name"
-                      className="outline-none border-b border-b-primary h-[60px] bg-transparent w-full pl-3 placeholder:text-[#757879]"
-                      placeholder="Your name"
-                    />
-                    <input
-                      type="text"
-                      name="user_email"
-                      className="outline-none border-b border-b-primary h-[60px] bg-transparent w-full pl-3 placeholder:text-[#757879]"
-                      placeholder="Your E-mail"
-                    />
-                  </div>
-                  <input
-                    name="message"
-                    placeholder="Your message"
-                    className="outline-none border-b border-b-primary h-[60px] bg-transparent w-full pl-3 placeholder:text-[#757879]"
-                  />
-                  <button
-                    className="flex mx-auto text-white bg-cyan-700 border-0 py-3 my-7 px-8 focus:outline-none hover:bg-blue-400 rounded text-lg"
-                    type="submit"
-                    value="Send"
-                  >
-                    Send
-                  </button>
-                </form>
-              </div>
-            </section>
-          </div>
-        </section>
       </main>
     </div>
   );
-}
+};
+
+export default Home
