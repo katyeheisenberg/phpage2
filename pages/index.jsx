@@ -17,7 +17,7 @@ import Mar3 from "../public/Marina3.jpg";
 import Mar4 from "../public/Marina4.jpg";
 import logo3 from "../public/logo3.svg";
 
-const Home:React.FunctionComponent = ()=> {
+const Home = ()=> {
   return (
     <div>
       <Head>

@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/globals.css';
 
 
-function MyApp(Component: React.FC<any>) {
+function MyApp(Component) {
   return (
     <Component />
   )
