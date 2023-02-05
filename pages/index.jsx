@@ -1,5 +1,4 @@
-import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
+import React from "react";
 import Head from "next/head";
 import { AiFillTwitterCircle, AiFillInstagram } from "react-icons/ai";
 import Me from "../public/meem.png";
@@ -17,7 +16,8 @@ import Mar3 from "../public/Marina3.jpg";
 import Mar4 from "../public/Marina4.jpg";
 import logo3 from "../public/logo3.svg";
 
-const Home = ()=> {
+
+export default function Home() {
   return (
     <div>
       <Head>
@@ -167,6 +167,5 @@ const Home = ()=> {
       </main>
     </div>
   );
-};
+}
 
-export default Home
