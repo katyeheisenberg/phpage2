@@ -17,7 +17,7 @@ import Mar4 from "../public/Marina4.jpg";
 import logo3 from "../public/logo3.svg";
 
 
-export default function Home() {
+const Home: React.FunctionComponent = () => {
   return (
     <div>
       <Head>
@@ -167,5 +167,7 @@ export default function Home() {
       </main>
     </div>
   );
-}
+};
+
+export default Home;
 
