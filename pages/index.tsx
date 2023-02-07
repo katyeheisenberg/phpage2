@@ -51,7 +51,7 @@ const Home: React.FunctionComponent = () => {
               </a>
             </div>
             <div className="mx-auto rounded-2xl hover:drop-shadow-[0_35px_35px_rgba(15,209,99,0.19)] hover:transition-shadow hover:duration-500 w-60 h-60 my-1 relative overflow-hidden md:h-70 md:w-70">
-              <Image src={Me} layout="fill" objectFit="cover" />
+              <Image src={Me} layout="fill" objectFit="cover" alt="" />
             </div>
           </div>
         </section>
@@ -70,6 +70,7 @@ const Home: React.FunctionComponent = () => {
                 height={"120%"}
                 layout="responsive"
                 src={img1}
+                alt=""
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -79,6 +80,7 @@ const Home: React.FunctionComponent = () => {
                 height={"120%"}
                 layout="responsive"
                 src={img2}
+                alt=""
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -88,6 +90,7 @@ const Home: React.FunctionComponent = () => {
                 height={"120%"}
                 layout="responsive"
                 src={img4}
+                alt=""
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -97,6 +100,7 @@ const Home: React.FunctionComponent = () => {
                 height={"120%"}
                 layout="responsive"
                 src={img5}
+                alt=""
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -106,6 +110,7 @@ const Home: React.FunctionComponent = () => {
                 height={"120%"}
                 layout="responsive"
                 src={img6}
+                alt=""
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -115,6 +120,7 @@ const Home: React.FunctionComponent = () => {
                 height={"120%"}
                 layout="responsive"
                 src={img7}
+                alt=""
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -124,6 +130,7 @@ const Home: React.FunctionComponent = () => {
                 height={"120%"}
                 layout="responsive"
                 src={Mar1}
+                alt=""
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -133,6 +140,7 @@ const Home: React.FunctionComponent = () => {
                 height={"120%"}
                 layout="responsive"
                 src={Mar2}
+                alt=""
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -142,6 +150,7 @@ const Home: React.FunctionComponent = () => {
                 height={"120%"}
                 layout="responsive"
                 src={Mar3}
+                alt=""
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -151,6 +160,7 @@ const Home: React.FunctionComponent = () => {
                 height={"120%"}
                 layout="responsive"
                 src={Mar4}
+                alt=""
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -160,6 +170,7 @@ const Home: React.FunctionComponent = () => {
                 height={"30%"}
                 layout="responsive"
                 src={img8}
+                alt=""
               />
             </div>
           </div>
