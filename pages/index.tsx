@@ -71,6 +71,7 @@ const Home: React.FunctionComponent = () => {
                 layout="responsive"
                 src={img1}
                 alt=""
+                loading="lazy"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -81,6 +82,7 @@ const Home: React.FunctionComponent = () => {
                 layout="responsive"
                 src={img2}
                 alt=""
+                loading="lazy"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -91,6 +93,7 @@ const Home: React.FunctionComponent = () => {
                 layout="responsive"
                 src={img4}
                 alt=""
+                loading="lazy"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -101,6 +104,7 @@ const Home: React.FunctionComponent = () => {
                 layout="responsive"
                 src={img5}
                 alt=""
+                loading="lazy"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -111,6 +115,7 @@ const Home: React.FunctionComponent = () => {
                 layout="responsive"
                 src={img6}
                 alt=""
+                loading="lazy"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -121,6 +126,7 @@ const Home: React.FunctionComponent = () => {
                 layout="responsive"
                 src={img7}
                 alt=""
+                loading="lazy"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -131,6 +137,7 @@ const Home: React.FunctionComponent = () => {
                 layout="responsive"
                 src={Mar1}
                 alt=""
+                loading="lazy"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -141,6 +148,7 @@ const Home: React.FunctionComponent = () => {
                 layout="responsive"
                 src={Mar2}
                 alt=""
+                loading="lazy"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -151,6 +159,7 @@ const Home: React.FunctionComponent = () => {
                 layout="responsive"
                 src={Mar3}
                 alt=""
+                loading="lazy"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -161,6 +170,7 @@ const Home: React.FunctionComponent = () => {
                 layout="responsive"
                 src={Mar4}
                 alt=""
+                loading="lazy"
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -171,6 +181,7 @@ const Home: React.FunctionComponent = () => {
                 layout="responsive"
                 src={img8}
                 alt=""
+                loading="lazy"
               />
             </div>
           </div>
