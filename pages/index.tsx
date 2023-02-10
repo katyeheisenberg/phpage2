@@ -1,4 +1,3 @@
-import React from "react";
 import Head from "next/head";
 import { AiFillTwitterCircle, AiFillInstagram } from "react-icons/ai";
 import Me from "../public/meem.png";
@@ -8,6 +7,8 @@ import img2 from "../public/5.jpg";
 import img4 from "../public/1.jpg";
 import img5 from "../public/2.jpg";
 import img6 from "../public/3.jpg";
+import img9 from "../public/7.jpg";
+import img10 from "../public/8.jpg";
 import img7 from "../public/4.jpg";
 import img8 from "../public/building.jpg";
 import Mar1 from "../public/Marina1.jpg";
@@ -15,6 +16,7 @@ import Mar2 from "../public/Marina2.jpg";
 import Mar3 from "../public/Marina3.jpg";
 import Mar4 from "../public/Marina4.jpg";
 import logo3 from "../public/logo3.svg";
+import Modal from "./components/Modal";
 
 
 const Home: React.FunctionComponent = () => {
@@ -66,122 +68,157 @@ const Home: React.FunctionComponent = () => {
             <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
-                width={"80%"}
-                height={"120%"}
+                width="80%"
+                height="120%"
                 layout="responsive"
                 src={img1}
                 alt=""
                 loading="lazy"
+                placeholder="blur"
               />
             </div>
             <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
-                width={"80%"}
-                height={"120%"}
+                width="80%"
+                height="120%"
                 layout="responsive"
                 src={img2}
                 alt=""
                 loading="lazy"
+                placeholder="blur"
               />
             </div>
             <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
-                width={"80%"}
-                height={"120%"}
+                width="80%"
+                height="120%"
                 layout="responsive"
                 src={img4}
                 alt=""
                 loading="lazy"
+                placeholder="blur"
               />
             </div>
             <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
-                width={"80%"}
-                height={"120%"}
+                width="80%"
+                height="120%"
                 layout="responsive"
                 src={img5}
                 alt=""
                 loading="lazy"
+                placeholder="blur"
               />
             </div>
             <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
-                width={"80%"}
-                height={"120%"}
+                width="80%"
+                height="120%"
                 layout="responsive"
                 src={img6}
                 alt=""
                 loading="lazy"
+                placeholder="blur"
               />
             </div>
             <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
-                width={"80%"}
-                height={"120%"}
+                width="80%"
+                height="120%"
                 layout="responsive"
                 src={img7}
                 alt=""
                 loading="lazy"
+                placeholder="blur"
               />
             </div>
             <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
-                width={"80%"}
-                height={"120%"}
+                width="80%"
+                height="120%"
                 layout="responsive"
                 src={Mar1}
                 alt=""
                 loading="lazy"
+                placeholder="blur"
               />
             </div>
             <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
-                width={"80%"}
-                height={"120%"}
+                width="80%"
+                height="120%"
                 layout="responsive"
                 src={Mar2}
                 alt=""
                 loading="lazy"
+                placeholder="blur"
               />
             </div>
             <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
-                width={"80%"}
-                height={"120%"}
+                width="80%"
+                height="120%"
                 layout="responsive"
                 src={Mar3}
                 alt=""
                 loading="lazy"
+                placeholder="blur"
               />
             </div>
             <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
-                width={"80%"}
-                height={"120%"}
+                width="80%"
+                height="120%"
                 layout="responsive"
                 src={Mar4}
                 alt=""
                 loading="lazy"
+                placeholder="blur"
               />
             </div>
             <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
-                width={"110%"}
-                height={"30%"}
+                width="80%"
+                height="120%"
+                layout="responsive"
+                src={img9}
+                alt=""
+                loading="lazy"
+                placeholder="blur"
+              />
+            </div>
+            <div className="basis-1/3 flex-1">
+              <Image
+                className="rounded-lg object-cover"
+                width="80%"
+                height="120%"
+                layout="responsive"
+                src={img10}
+                alt=""
+                loading="lazy"
+                placeholder="blur"
+              />
+            </div>
+            <div className="basis-1/3 flex-1">
+              <Image
+                className="rounded-lg object-cover"
+                width="110%"
+                height="30%"
                 layout="responsive"
                 src={img8}
                 alt=""
                 loading="lazy"
+                placeholder="blur"
               />
             </div>
           </div>
