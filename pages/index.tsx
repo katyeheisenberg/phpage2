@@ -16,7 +16,7 @@ import img8 from "../public/8.jpg";
 import img9 from "../public/9.jpg";
 import img10 from "../public/10.jpg";
 import logo3 from "../public/logo3.svg";
-import { Modal } from "../src/components/Modal";
+import { Modal } from "../src/components/modal";
 import { ImageDetail } from "../src/components/image-detail";
 
 const Home: React.FunctionComponent = () => {
