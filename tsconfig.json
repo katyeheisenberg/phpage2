@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "./public/declaration.d.ts"
-  ],
+, "src/components/Modal.ts"  ],
   "exclude": [
     "node_modules"
   ]

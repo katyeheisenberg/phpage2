@@ -1,25 +1,26 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
+import Link from "next/link";
 import { AiFillTwitterCircle, AiFillInstagram } from "react-icons/ai";
 import Me from "../public/meem.png";
 import Image from "next/image";
-import img1 from "../public/6.jpg";
-import img2 from "../public/5.jpg";
-import img4 from "../public/1.jpg";
-import img5 from "../public/2.jpg";
-import img6 from "../public/3.jpg";
-import img9 from "../public/7.jpg";
-import img10 from "../public/8.jpg";
-import img7 from "../public/4.jpg";
-import img8 from "../public/building.jpg";
-import Mar1 from "../public/Marina1.jpg";
-import Mar2 from "../public/Marina2.jpg";
-import Mar3 from "../public/Marina3.jpg";
-import Mar4 from "../public/Marina4.jpg";
+import img1 from "../public/1.jpg";
+import img2 from "../public/2.jpg";
+import img3 from "../public/3.jpg";
+import img4 from "../public/4.jpg";
+import img5 from "../public/5.jpg";
+import img6 from "../public/6.jpg";
+import img11 from "../public/11.jpg";
+import img7 from "../public/7.jpg";
+import img8 from "../public/8.jpg";
+import img9 from "../public/9.jpg";
+import img10 from "../public/10.jpg";
 import logo3 from "../public/logo3.svg";
-import Modal from "./components/Modal";
-
+import { Modal } from "../src/components/Modal";
+import { ImageDetail } from "../src/components/image-detail";
 
 const Home: React.FunctionComponent = () => {
+  let router = useRouter();
   return (
     <div>
       <Head>
@@ -52,12 +53,21 @@ const Home: React.FunctionComponent = () => {
                 <AiFillTwitterCircle />
               </a>
             </div>
-            <div className="mx-auto rounded-2xl hover:drop-shadow-[0_35px_35px_rgba(15,209,99,0.19)] hover:transition-shadow hover:duration-500 w-60 h-60 my-1 relative overflow-hidden md:h-70 md:w-70">
+            <div className="mx-auto rounded-2xl hover:drop-shadow-[0_35px_35px_rgba(15,209,99,0.19)] w-[20rem] h-[20rem] m-2 relative overflow-hidden md:h-70 md:w-70">
               <Image src={Me} layout="fill" objectFit="cover" alt="" />
             </div>
           </div>
         </section>
-        <section className="py-10">
+        {router.query.image && (
+          <Modal
+            onClose={() => {
+              router.push("/");
+            }}
+          >
+            <ImageDetail image={router.query.image} />
+          </Modal>
+        )}
+        <section className="py-5">
           <div>
             <h3 className="text-3xl text-center font-semibold">Portofolio</h3>
             <p className="text-xl py-2 leading-8 text-center text-gray-800 font-thin">
@@ -66,160 +76,180 @@ const Home: React.FunctionComponent = () => {
           </div>
           <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
             <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width="80%"
-                height="120%"
-                layout="responsive"
-                src={img1}
-                alt=""
-                loading="lazy"
-                placeholder="blur"
-              />
+              <Link href="/[image]" as="/1">
+                <a>
+                  <Image
+                    className="rounded-lg object-cover"
+                    width="80%"
+                    height="120%"
+                    layout="responsive"
+                    src={img1}
+                    alt=""
+                    loading="lazy"
+                    placeholder="blur"
+                  />
+                </a>
+              </Link>
             </div>
             <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width="80%"
-                height="120%"
-                layout="responsive"
-                src={img2}
-                alt=""
-                loading="lazy"
-                placeholder="blur"
-              />
+              <Link href="/[image]" as="/2">
+                <a>
+                  <Image
+                    className="rounded-lg object-cover"
+                    width="80%"
+                    height="120%"
+                    layout="responsive"
+                    src={img2}
+                    alt=""
+                    loading="lazy"
+                    placeholder="blur"
+                  />
+                </a>
+              </Link>
             </div>
             <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width="80%"
-                height="120%"
-                layout="responsive"
-                src={img4}
-                alt=""
-                loading="lazy"
-                placeholder="blur"
-              />
+              <Link href="/[image]" as="/3">
+                <a>
+                  <Image
+                    className="rounded-lg object-cover"
+                    width="80%"
+                    height="120%"
+                    layout="responsive"
+                    src={img3}
+                    alt=""
+                    loading="lazy"
+                    placeholder="blur"
+                  />
+                </a>
+              </Link>
             </div>
             <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width="80%"
-                height="120%"
-                layout="responsive"
-                src={img5}
-                alt=""
-                loading="lazy"
-                placeholder="blur"
-              />
+              <Link href="/[image]" as="/4">
+                <a>
+                  <Image
+                    className="rounded-lg object-cover"
+                    width="80%"
+                    height="120%"
+                    layout="responsive"
+                    src={img4}
+                    alt=""
+                    loading="lazy"
+                    placeholder="blur"
+                  />
+                </a>
+              </Link>
             </div>
             <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width="80%"
-                height="120%"
-                layout="responsive"
-                src={img6}
-                alt=""
-                loading="lazy"
-                placeholder="blur"
-              />
+              <Link href="/[image]" as="/5">
+                <a>
+                  <Image
+                    className="rounded-lg object-cover"
+                    width="80%"
+                    height="120%"
+                    layout="responsive"
+                    src={img5}
+                    alt=""
+                    loading="lazy"
+                    placeholder="blur"
+                  />
+                </a>
+              </Link>
             </div>
             <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width="80%"
-                height="120%"
-                layout="responsive"
-                src={img7}
-                alt=""
-                loading="lazy"
-                placeholder="blur"
-              />
+              <Link href="/[image]" as="/6">
+                <a>
+                  <Image
+                    className="rounded-lg object-cover"
+                    width="80%"
+                    height="120%"
+                    layout="responsive"
+                    src={img6}
+                    alt=""
+                    loading="lazy"
+                    placeholder="blur"
+                  />
+                </a>
+              </Link>
             </div>
             <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width="80%"
-                height="120%"
-                layout="responsive"
-                src={Mar1}
-                alt=""
-                loading="lazy"
-                placeholder="blur"
-              />
+              <Link href="/[image]" as="/7">
+                <a>
+                  <Image
+                    className="rounded-lg object-cover"
+                    width="80%"
+                    height="120%"
+                    layout="responsive"
+                    src={img7}
+                    alt=""
+                    loading="lazy"
+                    placeholder="blur"
+                  />
+                </a>
+              </Link>
             </div>
             <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width="80%"
-                height="120%"
-                layout="responsive"
-                src={Mar2}
-                alt=""
-                loading="lazy"
-                placeholder="blur"
-              />
+              <Link href="/[image]" as="/8">
+                <a>
+                  <Image
+                    className="rounded-lg object-cover"
+                    width="80%"
+                    height="120%"
+                    layout="responsive"
+                    src={img8}
+                    alt=""
+                    loading="lazy"
+                    placeholder="blur"
+                  />
+                </a>
+              </Link>
             </div>
             <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width="80%"
-                height="120%"
-                layout="responsive"
-                src={Mar3}
-                alt=""
-                loading="lazy"
-                placeholder="blur"
-              />
+              <Link href="/[image]" as="/9">
+                <a>
+                  <Image
+                    className="rounded-lg object-cover"
+                    width="80%"
+                    height="120%"
+                    layout="responsive"
+                    src={img9}
+                    alt=""
+                    loading="lazy"
+                    placeholder="blur"
+                  />
+                </a>
+              </Link>
             </div>
             <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width="80%"
-                height="120%"
-                layout="responsive"
-                src={Mar4}
-                alt=""
-                loading="lazy"
-                placeholder="blur"
-              />
+              <Link href="/[image]" as="/10">
+                <a>
+                  <Image
+                    className="rounded-lg object-cover"
+                    width="80%"
+                    height="120%"
+                    layout="responsive"
+                    src={img10}
+                    alt=""
+                    loading="lazy"
+                    placeholder="blur"
+                  />
+                </a>
+              </Link>
             </div>
             <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width="80%"
-                height="120%"
-                layout="responsive"
-                src={img9}
-                alt=""
-                loading="lazy"
-                placeholder="blur"
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width="80%"
-                height="120%"
-                layout="responsive"
-                src={img10}
-                alt=""
-                loading="lazy"
-                placeholder="blur"
-              />
-            </div>
-            <div className="basis-1/3 flex-1">
-              <Image
-                className="rounded-lg object-cover"
-                width="110%"
-                height="30%"
-                layout="responsive"
-                src={img8}
-                alt=""
-                loading="lazy"
-                placeholder="blur"
-              />
+              <Link href="/[image]" as="/11">
+                <a>
+                  <Image
+                    className="rounded-lg object-cover"
+                    width="110%"
+                    height="30%"
+                    layout="responsive"
+                    src={img11}
+                    alt=""
+                    loading="lazy"
+                    placeholder="blur"
+                  />
+                </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -229,4 +259,3 @@ const Home: React.FunctionComponent = () => {
 };
 
 export default Home;
-
