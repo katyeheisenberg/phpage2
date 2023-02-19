@@ -79,7 +79,7 @@ const Home: React.FunctionComponent = () => {
               <Link href="/[image]" as="/1">
                 <a>
                   <Image
-                    className="rounded-lg object-cover"
+                    className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
                     width="80%"
                     height="120%"
                     layout="responsive"
