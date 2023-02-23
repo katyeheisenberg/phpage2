@@ -55,10 +55,10 @@ const Home: React.FunctionComponent = () => {
         <title>katyathegreatest</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="px-10 md:px-20 lg:px-40">
-        <section className="min-h-screen">
+      <main className="px-10 md:px-10 lg:px-40">
+        <section className="min-h-screen min-w-screen">
           <motion.div
-            className="text-center p-5 py-10"
+            className="text-center py-10"
             initial={{ x: 100 }}
             animate={{ x: 0 }}
             transition={{ duration: 0.6 }}
@@ -87,12 +87,20 @@ const Home: React.FunctionComponent = () => {
               </a>
             </div>
             <motion.div
-              className="mx-auto rounded-lg w-60 h-60 relative overflow-hidden mt-10 md:h-70 md:w-70"
+              className="flex justify-center"
               initial={{ x: -100 }}
               animate={{ x: 0 }}
               transition={{ duration: 1 }}
             >
-              <Image src={Me} layout="fill" objectFit="cover" alt="" />
+              <div className="relative w-[20rem] h-[20rem]">
+                <Image
+                  src={Me}
+                  layout="fill"
+                  className="rounded-lg object-cover"
+                  width="30vw"
+                  alt=""
+                />
+              </div>
             </motion.div>
           </motion.div>
         </section>
