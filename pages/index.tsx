@@ -1,7 +1,10 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { AiFillTwitterCircle, AiFillInstagram } from "react-icons/ai";
+import { SiTelegram, SiInstagram } from "react-icons/si";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import Me from "../public/meem.png";
 import Image from "next/image";
 import img1 from "../public/1.jpg";
@@ -20,16 +23,46 @@ import { Modal } from "../src/components/modal";
 import { ImageDetail } from "../src/components/image-detail";
 
 const Home: React.FunctionComponent = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.05,
+  });
+  const animation = useAnimation();
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 1.4,
+          bounce: 0.2,
+        },
+      });
+    }
+
+    if (!inView) {
+      animation.start({
+        x: "-100vw",
+        transition: {
+          duration: 1.4,
+        },
+      });
+    }
+  }, [inView]);
   let router = useRouter();
   return (
-    <div>
+    <div className="relative w-full h-screen">
       <Head>
-        <title>Portfolio</title>
+        <title>katyathegreatest</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="px-10 md:px-20 lg:px-40">
         <section className="min-h-screen">
-          <div className="text-center p-5 py-10">
+          <motion.div
+            className="text-center p-5 py-10"
+            initial={{ x: 100 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             <Image src={logo3} alt="" />
             <h3 className="text-3xl py-10 md:text-3xl font-semibold">
               Film photographer.
@@ -43,20 +76,25 @@ const Home: React.FunctionComponent = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <AiFillInstagram />
+                <SiInstagram />
               </a>
               <a
-                href="https://twitter.com/Katheridze?t=GY6FZSadUY2dkij54Jsrwg&s=09"
+                href="https://t.me/oneonetwofour"
                 target="_blank"
                 rel="noreferrer"
               >
-                <AiFillTwitterCircle />
+                <SiTelegram />
               </a>
             </div>
-            <div className="mx-auto rounded-2xl hover:drop-shadow-[0_35px_35px_rgba(15,209,99,0.19)] w-[20rem] h-[20rem] m-2 relative overflow-hidden md:h-70 md:w-70">
+            <motion.div
+              className="mx-auto rounded-lg w-60 h-60 relative overflow-hidden mt-10 md:h-70 md:w-70"
+              initial={{ x: -100 }}
+              animate={{ x: 0 }}
+              transition={{ duration: 1 }}
+            >
               <Image src={Me} layout="fill" objectFit="cover" alt="" />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </section>
         {router.query.image && (
           <Modal
@@ -67,14 +105,17 @@ const Home: React.FunctionComponent = () => {
             <ImageDetail image={router.query.image} />
           </Modal>
         )}
-        <section className="py-5">
-          <div>
+        <section className="py-5" ref={ref}>
+          <motion.div animate={animation}>
             <h3 className="text-3xl text-center font-semibold">Portofolio</h3>
             <p className="text-xl py-2 leading-8 text-center text-gray-800 font-thin">
               Collection of my recent photos.
             </p>
-          </div>
-          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+          </motion.div>
+          <motion.div
+            className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap"
+            animate={animation}
+          >
             <div className="basis-1/3 flex-1">
               <Link href="/[image]" as="/1">
                 <a>
@@ -251,7 +292,7 @@ const Home: React.FunctionComponent = () => {
                 </a>
               </Link>
             </div>
-          </div>
+          </motion.div>
         </section>
       </main>
     </div>
