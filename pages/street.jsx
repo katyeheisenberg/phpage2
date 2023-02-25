@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "../src/components/header";
-import Footer from "../src/components/footer";
 import street1 from "../public/1.jpg";
 import street2 from "../public/3.jpg";
 import street3 from "../public/4.jpg";
