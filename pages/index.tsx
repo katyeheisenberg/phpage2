@@ -50,7 +50,7 @@ const Home: React.FunctionComponent = () => {
       <main className="px-10 md:px-10 lg:px-40">
         <section className="min-h-screen min-w-screen">
           <motion.div
-            className="text-center py-10"
+            className="text-center py-10 "
             initial={{ x: 100 }}
             animate={{ x: 0 }}
             transition={{ duration: 0.6 }}
@@ -62,6 +62,7 @@ const Home: React.FunctionComponent = () => {
             </p>
             <div className="text-5xl flex justify-center gap-16 py-10 text-gray-600">
               <a
+                className="hover:scale-110 hover:transform-all duration-300"
                 href="https://www.instagram.com/katyathegreatest/"
                 target="_blank"
                 rel="noreferrer"
@@ -69,6 +70,7 @@ const Home: React.FunctionComponent = () => {
                 <SiInstagram />
               </a>
               <a
+                className="hover:scale-110 hover:transform-all duration-300"
                 href="https://t.me/oneonetwofour"
                 target="_blank"
                 rel="noreferrer"
@@ -82,7 +84,7 @@ const Home: React.FunctionComponent = () => {
               animate={{ x: 0 }}
               transition={{ duration: 1 }}
             >
-              <div className="relative w-[20rem] h-[20rem]">
+              <div className="relative w-[20rem] h-[20rem] hover:scale-110 hover:transform-all duration-700">
                 <Image
                   src={Me}
                   layout="fill"
@@ -101,17 +103,17 @@ const Home: React.FunctionComponent = () => {
           </motion.div>
 
           <motion.div
-            className="flex flex-col gap-10 py-[3rem] lg:flex-row lg:flex-wrap"
+            className="flex flex-col gap-20 py-[3rem] lg:flex-row lg:flex-wrap"
             animate={animation}
           >
-            <div className="basis-1/3 flex-1 h-100">
-              <div className="max-w border rounded-lg relative cursor-pointer">
+            <div className="basis-1/3 flex-1 h-100 hover:scale-110 hover:transform-all duration-700">
+              <div className="border rounded-lg relative cursor-pointer">
                 <Link href="/portraits">
                   <div className="blur">
                     <Image
                       className="rounded-lg object-cover"
-                      width="80%"
-                      height="60%"
+                      width="70%"
+                      height="50%"
                       layout="responsive"
                       src={img9}
                       alt=""
@@ -128,14 +130,14 @@ const Home: React.FunctionComponent = () => {
               </div>
             </div>
 
-            <div className="basis-1/3 flex-1 h-100">
-              <div className="max-w border rounded-lg relative cursor-pointer">
+            <div className="basis-1/3 flex-1 h-100 hover:scale-110 hover:transform-all duration-700">
+              <div className="border rounded-lg relative cursor-pointer">
                 <Link href="/nature">
                   <div className="blur">
                     <Image
                       className="rounded-lg object-cover"
-                      width="80%"
-                      height="60%"
+                      width="70%"
+                      height="50%"
                       layout="responsive"
                       src={img2}
                       alt=""
@@ -152,7 +154,7 @@ const Home: React.FunctionComponent = () => {
               </div>
             </div>
 
-            <div className="basis-1/3 flex-1 h-100">
+            <div className="basis-1/3 flex-1 h-100 hover:scale-110 hover:transform-all duration-700">
               <div className="max-w border rounded-lg relative cursor-pointer">
                 <Link href="/street">
                   <div className="blur">
@@ -177,6 +179,7 @@ const Home: React.FunctionComponent = () => {
             </div>
           </motion.div>
         </section>
+
         <section className="w-full">
           <footer className="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 ">
             <span className="text-sm text-gray-500 sm:text-center">
