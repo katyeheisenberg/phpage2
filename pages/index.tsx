@@ -4,7 +4,6 @@ import { SiTelegram, SiInstagram } from "react-icons/si";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import Footer from "../src/components/footer";
 import Me from "../public/meem.png";
 import Image from "next/image";
 import img2 from "../public/2.jpg";
