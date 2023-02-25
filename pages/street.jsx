@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "../src/components/header";
+import Footer from "../src/components/footer";
 import street1 from "../public/1.jpg";
 import street2 from "../public/3.jpg";
 import street3 from "../public/4.jpg";
 import street4 from "../public/6.jpg";
+import street5 from "../public/11.jpg";
 
 
 const Street = () => {
@@ -74,7 +76,20 @@ const Street = () => {
             placeholder="blur"
           />
         </div>
+        <div className="basis-1/3 flex-1">
+          <Image
+            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
+            width="80%"
+            height="20%"
+            layout="responsive"
+            src={street5}
+            alt=""
+            loading="lazy"
+            placeholder="blur"
+          />
+        </div>
       </div>
+      <Footer />
     </motion.div>
   );
 }

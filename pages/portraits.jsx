@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import Header from '../src/components/header';
+import Footer from "../src/components/footer";
 import Mar1 from "../public/7.jpg";
 import Mar2 from "../public/8.jpg";
 import Mar3 from "../public/9.jpg";
@@ -74,6 +75,7 @@ const portraits = () => {
           />
         </div>
       </div>
+      <Footer />
     </motion.div>
   );
 }

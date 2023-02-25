@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "../src/components/header";
+import Footer from "../src/components/footer";
 import Nat1 from "../public/2.jpg";
 
 const portraits = () => {
@@ -35,6 +36,7 @@ const portraits = () => {
           />
         </div>
       </div>
+      <Footer />
     </motion.div>
   );
 };

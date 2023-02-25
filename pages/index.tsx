@@ -4,6 +4,7 @@ import { SiTelegram, SiInstagram } from "react-icons/si";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import Footer from "../src/components/footer";
 import Me from "../public/meem.png";
 import Image from "next/image";
 import img2 from "../public/2.jpg";
@@ -14,7 +15,6 @@ import { Modal } from "../src/components/modal";
 import { ImageDetail } from "../src/components/image-detail";
 
 const Home: React.FunctionComponent = () => {
-
   const { ref, inView } = useInView({
     threshold: 0.05,
   });
@@ -178,6 +178,7 @@ const Home: React.FunctionComponent = () => {
             </div>
           </motion.div>
         </section>
+        <Footer />
       </main>
     </div>
   );
