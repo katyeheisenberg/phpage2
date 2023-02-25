@@ -36,7 +36,6 @@ const portraits = () => {
           />
         </div>
       </div>
-      <Footer />
     </motion.div>
   );
 };

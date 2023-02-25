@@ -89,7 +89,6 @@ const Street = () => {
           />
         </div>
       </div>
-      <Footer />
     </motion.div>
   );
 }
