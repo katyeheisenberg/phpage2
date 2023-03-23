@@ -8,6 +8,10 @@ import street2 from "../public/3.jpg";
 import street3 from "../public/4.jpg";
 import street4 from "../public/6.jpg";
 import street5 from "../public/11.jpg";
+import street6 from "../public/13.jpg";
+import street7 from "../public/14.jpg";
+import street8 from "../public/17.jpg";
+import street9 from "../public/16.jpg";
 
 
 const Street = () => {
@@ -70,6 +74,54 @@ const Street = () => {
             height="70%"
             layout="responsive"
             src={street4}
+            alt=""
+            loading="lazy"
+            placeholder="blur"
+          />
+        </div>
+        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
+          <Image
+            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
+            width="50%"
+            height="70%"
+            layout="responsive"
+            src={street6}
+            alt=""
+            loading="lazy"
+            placeholder="blur"
+          />
+        </div>
+        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
+          <Image
+            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
+            width="50%"
+            height="70%"
+            layout="responsive"
+            src={street7}
+            alt=""
+            loading="lazy"
+            placeholder="blur"
+          />
+        </div>
+        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
+          <Image
+            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
+            width="50%"
+            height="70%"
+            layout="responsive"
+            src={street8}
+            alt=""
+            loading="lazy"
+            placeholder="blur"
+          />
+        </div>
+        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
+          <Image
+            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
+            width="50%"
+            height="70%"
+            layout="responsive"
+            src={street9}
             alt=""
             loading="lazy"
             placeholder="blur"
