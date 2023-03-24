@@ -8,10 +8,10 @@ import street2 from "../public/3.jpg";
 import street3 from "../public/4.jpg";
 import street4 from "../public/6.jpg";
 import street5 from "../public/11.jpg";
-import street6 from "../public/13.jpg";
+import street6 from "../public/13.JPG";
 import street7 from "../public/14.jpg";
-import street8 from "../public/17.jpg";
-import street9 from "../public/16.jpg";
+import street8 from "../public/17.JPG";
+import street9 from "../public/16.JPG";
 
 
 const Street = () => {
