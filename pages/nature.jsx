@@ -8,6 +8,7 @@ import Nat2 from "../public/12.jpg";
 import Nat3 from "../public/15.JPG";
 import Nat5 from "../public/19.jpg";
 import Nat6 from "../public/18.jpg";
+import Nat7 from "../public/29.jpg";
 
 const portraits = () => {
   return (
@@ -35,7 +36,6 @@ const portraits = () => {
             src={Nat1}
             alt=""
             loading="lazy"
-            placeholder="blur"
           />
         </div>
         <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
@@ -47,7 +47,6 @@ const portraits = () => {
             src={Nat2}
             alt=""
             loading="lazy"
-            placeholder="blur"
           />
         </div>
         <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
@@ -59,7 +58,6 @@ const portraits = () => {
             src={Nat3}
             alt=""
             loading="lazy"
-            placeholder="blur"
           />
         </div>
         <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
@@ -71,19 +69,28 @@ const portraits = () => {
             src={Nat5}
             alt=""
             loading="lazy"
-            placeholder="blur"
           />
         </div>
         <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
           <Image
             className="rounded-lg object-fit sm:w-[80%] sm:h-[120%]"
-            width="75%"
+            width="65%"
             height="35%"
             layout="responsive"
             src={Nat6}
             alt=""
             loading="lazy"
-            placeholder="blur"
+          />
+        </div>
+        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
+          <Image
+            className="rounded-lg object-fit sm:w-[80%] sm:h-[120%]"
+            width="70%"
+            height="45%"
+            layout="responsive"
+            src={Nat7}
+            alt=""
+            loading="lazy"
           />
         </div>
       </div>
