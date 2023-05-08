@@ -8,36 +8,53 @@ import Me from "../public/meem.png";
 import Image from "next/image";
 import img2 from "../public/2.jpg";
 import img11 from "../public/11.jpg";
-import img9 from "../public/9.jpg";
+import img9 from "../public/25.jpg";
 import logo3 from "../public/logo3.svg";
 import { Modal } from "../src/components/modal";
 import { ImageDetail } from "../src/components/image-detail";
 
 const Home: React.FunctionComponent = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.05,
-  });
-
+  const { ref, inView } = useInView({ threshold: 0.05 });
   const animation = useAnimation();
+  const blurDataUrl1 =
+    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiPjwvc3ZnPgo=";
+  const blurDataUrl2 =
+    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiPjwvc3ZnPgo=";
+  const blurDataUrl3 =
+    "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiPjwvc3ZnPko=";
+    const images = [
+      {
+        src: img9,
+        alt: "Image 9",
+        blurDataURL: blurDataUrl1,
+        href: "/portraits",
+        label: "Portraits",
+      },
+      {
+        src: img2,
+        alt: "Image 2",
+        blurDataURL: blurDataUrl2,
+        href: "/nature",
+        label: "Nature",
+      },
+      {
+        src: img11,
+        alt: "Image 11",
+        blurDataURL: blurDataUrl3,
+        href: "/street",
+        label: "Street",
+      },
+    ];
+
+
   useEffect(() => {
     if (inView) {
       animation.start({
         x: 0,
-        transition: {
-          type: "spring",
-          duration: 1.4,
-          bounce: 0.2,
-        },
+        transition: { type: "spring", duration: 1.4, bounce: 0.2 },
       });
-    }
-
-    if (!inView) {
-      animation.start({
-        x: "-100vw",
-        transition: {
-          duration: 1.4,
-        },
-      });
+    } else {
+      animation.start({ x: "-100vw", transition: { duration: 1.4 } });
     }
   }, [inView]);
 
@@ -50,7 +67,7 @@ const Home: React.FunctionComponent = () => {
       <main className="px-10 md:px-10 lg:px-40">
         <section className="min-h-screen min-w-screen">
           <motion.div
-            className="text-center py-10 "
+            className="text-center py-10"
             initial={{ x: 100 }}
             animate={{ x: 0 }}
             transition={{ duration: 0.6 }}
@@ -103,80 +120,38 @@ const Home: React.FunctionComponent = () => {
           </motion.div>
 
           <motion.div
-            className="flex flex-col gap-20 py-[3rem] lg:flex-row lg:flex-wrap"
+            className="grid grid-cols-1 gap-20 py-[3rem] md:grid-cols-3 md:flex-wrap"
             animate={animation}
           >
-            <div className="basis-1/3 flex-1 h-100 hover:scale-110 hover:transform-all duration-700">
-              <div className="border rounded-lg relative cursor-pointer">
-                <Link href="/portraits">
-                  <div className="blur">
-                    <Image
-                      className="rounded-lg object-cover"
-                      width="70%"
-                      height="50%"
-                      layout="responsive"
-                      src={img9}
-                      alt=""
-                      loading="lazy"
-                      placeholder="blur"
-                    />
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className="basis-1/3 flex-1 h-100 hover:scale-110 hover:transform-all duration-700"
+              >
+                <div className="border rounded-lg relative cursor-pointer">
+                  <Link href={image.href}>
+                    <div className="blur">
+                      <Image
+                        className="rounded-lg object-cover"
+                        width="70%"
+                        height="50%"
+                        layout="responsive"
+                        src={image.src}
+                        alt={image.alt}
+                        loading="lazy"
+                        placeholder="blur"
+                        blurDataURL={image.blurDataURL}
+                      />
+                    </div>
+                  </Link>
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                    <h5 className="mb-2 text-3xl tracking-tight text-center text-white font-light">
+                      {image.label}
+                    </h5>
                   </div>
-                </Link>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <h5 className="mb-2 text-3xl tracking-tight text-center text-white font-light">
-                    Portraits
-                  </h5>
                 </div>
               </div>
-            </div>
-
-            <div className="basis-1/3 flex-1 h-100 hover:scale-110 hover:transform-all duration-700">
-              <div className="border rounded-lg relative cursor-pointer">
-                <Link href="/nature">
-                  <div className="blur">
-                    <Image
-                      className="rounded-lg object-cover"
-                      width="70%"
-                      height="50%"
-                      layout="responsive"
-                      src={img2}
-                      alt=""
-                      loading="lazy"
-                      placeholder="blur"
-                    />
-                  </div>
-                </Link>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <h5 className="mb-2 text-3xl tracking-tight text-center text-white font-light">
-                    Nature
-                  </h5>
-                </div>
-              </div>
-            </div>
-
-            <div className="basis-1/3 flex-1 h-100 hover:scale-110 hover:transform-all duration-700">
-              <div className="max-w border rounded-lg relative cursor-pointer">
-                <Link href="/street">
-                  <div className="blur">
-                    <Image
-                      className="rounded-lg object-cover"
-                      width="80%"
-                      height="20%"
-                      layout="responsive"
-                      src={img11}
-                      alt=""
-                      loading="lazy"
-                      placeholder="blur"
-                    />
-                  </div>
-                </Link>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <h5 className="mb-2 text-3xl tracking-tight text-center text-white font-light">
-                    Street
-                  </h5>
-                </div>
-              </div>
-            </div>
+            ))}
           </motion.div>
         </section>
 
