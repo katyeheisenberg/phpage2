@@ -5,10 +5,10 @@ import Image from "next/image";
 import Header from "../src/components/header";
 import Nat1 from "../public/2.jpg";
 import Nat2 from "../public/12.jpg";
-import Nat3 from "../public/15.jpg";
 import Nat5 from "../public/19.jpg";
 import Nat6 from "../public/18.jpg";
 import Nat7 from "../public/29.jpg";
+import Nat3 from "../public/15.jpg";
 
 const photos = [
   {
