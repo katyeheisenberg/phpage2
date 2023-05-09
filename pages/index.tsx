@@ -74,7 +74,7 @@ const Home: React.FunctionComponent = () => {
           >
             <Image src={logo3} alt="" />
             <h3 className="text-3xl py-10 md:text-3xl">Film photographer.</h3>
-            <p className="py-4 text-gray-800 max-w-sm mx-auto md:text-xl">
+            <p className="py-4 text-gray-800 max-w-sm mx-auto md:text-xl text-thin">
               Portraits. Street photography. Nature photography.
             </p>
             <div className="text-5xl flex justify-center gap-16 py-10 text-gray-600">
