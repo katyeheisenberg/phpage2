@@ -9,9 +9,9 @@ import str3 from "../public/4.jpg";
 import str4 from "../public/6.jpg";
 import str5 from "../public/11.jpg";
 import str7 from "../public/14.jpg";
-import str9 from "../public/16.jpg";
-import str6 from "../public/13.jpg";
-import str8 from "../public/17.jpg";
+import str9 from "../public/16.JPG";
+import str6 from "../public/13.JPG";
+import str8 from "../public/17.JPG";
 
 const photos = [
   {
