@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -16,6 +16,61 @@ import Ant6 from "../public/25.jpg";
 import Ant7 from "../public/27.jpg";
 import Ant8 from "../public/28.jpg";
 
+
+const Photo = ({ src, width, height, description }) => {
+  const [showDescription, setShowDescription] = useState(false);
+
+  const handleClick = () => {
+    setShowDescription(!showDescription);
+  };
+
+  return (
+    <div
+      className="relative basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700"
+      onClick={handleClick}
+    >
+      <Image
+        className={`rounded-lg object-cover sm:w-[80%] sm:h-[120%] ${
+          showDescription ? "blur-[10px]" : ""
+        } transition-all duration-300 ease-in-out`}
+        width={width}
+        height={height}
+        layout="responsive"
+        src={src}
+        alt=""
+        loading="lazy"
+      />
+      {showDescription && (
+        <div className="absolute inset-0 flex items-center justify-center p-4 overflow-hidden">
+          <dev className="text-center text-white font-light text-sm max-w-lg mx-auto overflow-auto">
+            {description}
+          </dev>
+          <style jsx>{`
+            ::-webkit-scrollbar {
+              display: none;
+            }
+          `}</style>
+        </div>
+      )}
+    </div>
+  );
+};
+
+  const photos = [
+    { src: Ant1, width: "40%", height: "40%", description: "Anton." },
+    { src: Ant2, width: "40%", height: "40%", description: "Anton." },
+    { src: Ant3, width: "40%", height: "40%", description: "Anton." },
+    { src: Ant4, width: "40%", height: "40%", description: "Anton." },
+    { src: Ant5, width: "40%", height: "40%", description: "Anton." },
+    { src: Ant6, width: "40%", height: "40%", description: "Anton." },
+    { src: Ant7, width: "40%", height: "40%", description: "Anton." },
+    { src: Ant8, width: "40%", height: "40%", description: "Anton." },
+    { src: Mar1, width: "40%", height: "60%", description: "Marina." },
+    { src: Mar2, width: "40%", height: "60%", description: "Marina." },
+    { src: Mar3, width: "40%", height: "60%", description: "Marina." },
+    { src: Mar4, width: "40%", height: "60%", description: "Marina." },
+  ];
+
 const portraits = () => {
   return (
     <motion.div
@@ -27,159 +82,18 @@ const portraits = () => {
       <Header />
       <div className="m-4 p-5 flex justify-center">
         <Link href="/">
-          <button className="bg-emerald-600 hover:bg-emerald-400 text-white font-bold py-3 px-5 border-b-4 border-emerald-700 hover:border-emerald-500 rounded hover:scale-110 hover:transform-all duration-200">
+          <button className="bg-emerald-600 hover:bg-emerald-400 text-white font-bold py-2 px-4 border-b-4 border-emerald-700 hover:border-emerald-500 rounded hover:scale-110 hover:transform-all duration-200">
             Back
           </button>
         </Link>
       </div>
       <div className="flex flex-col gap-20 py-[3rem] lg:flex-row lg:flex-wrap">
-        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
-          <Image
-            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
-            width="50%"
-            height="70%"
-            layout="responsive"
-            src={Mar1}
-            alt=""
-            loading="lazy"
-            placeholder="blur"
-          />
-        </div>
-        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
-          <Image
-            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
-            width="50%"
-            height="70%"
-            layout="responsive"
-            src={Mar2}
-            alt=""
-            loading="lazy"
-            placeholder="blur"
-          />
-        </div>
-        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
-          <Image
-            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
-            width="50%"
-            height="70%"
-            layout="responsive"
-            src={Mar3}
-            alt=""
-            loading="lazy"
-            placeholder="blur"
-          />
-        </div>
-        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
-          <Image
-            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
-            width="50%"
-            height="70%"
-            layout="responsive"
-            src={Mar4}
-            alt=""
-            loading="lazy"
-            placeholder="blur"
-          />
-        </div>
-        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
-          <Image
-            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
-            width="60%"
-            height="60%"
-            layout="responsive"
-            src={Ant1}
-            alt=""
-            loading="lazy"
-            placeholder="blur"
-          />
-        </div>
-        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
-          <Image
-            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
-            width="60%"
-            height="60%"
-            layout="responsive"
-            src={Ant2}
-            alt=""
-            loading="lazy"
-            placeholder="blur"
-          />
-        </div>
-        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
-          <Image
-            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
-            width="60%"
-            height="60%"
-            layout="responsive"
-            src={Ant3}
-            alt=""
-            loading="lazy"
-            placeholder="blur"
-          />
-        </div>
-        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
-          <Image
-            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
-            width="60%"
-            height="60%"
-            layout="responsive"
-            src={Ant4}
-            alt=""
-            loading="lazy"
-            placeholder="blur"
-          />
-        </div>
-        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
-          <Image
-            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
-            width="60%"
-            height="60%"
-            layout="responsive"
-            src={Ant5}
-            alt=""
-            loading="lazy"
-            placeholder="blur"
-          />
-        </div>
-        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
-          <Image
-            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
-            width="60%"
-            height="60%"
-            layout="responsive"
-            src={Ant6}
-            alt=""
-            loading="lazy"
-            placeholder="blur"
-          />
-        </div>
-        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
-          <Image
-            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
-            width="60%"
-            height="60%"
-            layout="responsive"
-            src={Ant7}
-            alt=""
-            loading="lazy"
-            placeholder="blur"
-          />
-        </div>
-        <div className="basis-1/3 flex-1 hover:scale-110 hover:transform-all duration-700">
-          <Image
-            className="rounded-lg object-cover sm:w-[80%] sm:h-[120%]"
-            width="60%"
-            height="60%"
-            layout="responsive"
-            src={Ant8}
-            alt=""
-            loading="lazy"
-            placeholder="blur"
-          />
-        </div>
+        {photos.map((photo, index) => (
+          <Photo key={index} {...photo} />
+        ))}
       </div>
     </motion.div>
   );
-}
+};
 
-export default portraits
+export default portraits;

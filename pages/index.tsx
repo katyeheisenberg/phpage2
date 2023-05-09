@@ -74,7 +74,7 @@ const Home: React.FunctionComponent = () => {
           >
             <Image src={logo3} alt="" />
             <h3 className="text-3xl py-10 md:text-3xl">Film photographer.</h3>
-            <p className="text-sm py-4 text-gray-800 max-w-sm mx-auto md:text-xl font-thin">
+            <p className="py-4 text-gray-800 max-w-sm mx-auto md:text-xl">
               Portraits. Street photography. Nature photography.
             </p>
             <div className="text-5xl flex justify-center gap-16 py-10 text-gray-600">
@@ -116,7 +116,9 @@ const Home: React.FunctionComponent = () => {
 
         <section className="py-5" ref={ref}>
           <motion.div animate={animation} className="pb-5">
-            <h3 className="text-3xl text-center">Collection of my photos</h3>
+            <h3 className="text-3xl text-center">
+              Collection of my photos
+            </h3>
           </motion.div>
 
           <motion.div
