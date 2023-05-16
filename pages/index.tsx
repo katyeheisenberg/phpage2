@@ -10,8 +10,7 @@ import img2 from "../public/2.jpg";
 import img11 from "../public/11.jpg";
 import img9 from "../public/25.jpg";
 import logo3 from "../public/logo3.svg";
-import { Modal } from "../src/components/modal";
-import { ImageDetail } from "../src/components/image-detail";
+import ContactForm from "../src/components/contact"
 
 const Home: React.FunctionComponent = () => {
   const { ref, inView } = useInView({ threshold: 0.05 });
@@ -155,6 +154,10 @@ const Home: React.FunctionComponent = () => {
               </div>
             ))}
           </motion.div>
+        </section>
+
+        <section className="m-4">
+          <ContactForm/>
         </section>
 
         <section className="w-full">
